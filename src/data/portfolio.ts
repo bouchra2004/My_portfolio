@@ -1,3 +1,12 @@
+export type PortfolioProject = {
+  name: string
+  type: string
+  description: string
+  technologies: readonly string[]
+  /** URL complète de votre dépôt (ex. https://github.com/VOTRE_USER/mon-repo) */
+  githubUrl?: string
+}
+
 export const portfolio = {
   hero_headline:
     'Software Engineering & AI Student — Seeking 4-month PFA internship in AI & Web Development',
@@ -39,53 +48,77 @@ export const portfolio = {
   },
   about: {
     intro:
-      "En parallèle des cours, j'investis dans les hackathons, les bootcamps et la vie associative : concourir, prototyper vite, et apprendre en équipe. Voici quelques moments marquants — les visuels ci-dessous sont des emplacements réservés que vous pourrez remplacer par vos photos réelles.",
+      "En parallèle des cours, j'investis dans les hackathons, les bootcamps et la vie associative : concourir, prototyper vite, et apprendre en équipe. Voici quelques moments marquants de mon parcours.",
     extracurricular: [
       {
         title: 'RamadanAI Hackathon',
         badge: '2024 · Prix Impact territorial & utilité publique',
         description:
-          "Avec mon équipe, nous avons remporté la 3ᵉ place au hackathon régional RamadanAI, puis été sélectionnées pour la phase nationale en tant que finalistes. Un parcours intense autour de l'IA au service de l'intérêt collectif pendant le Ramadan.",
-        images: [
+          "Avec mon équipe, nous avons remporté la 3ᵉ place au hackathon régional RamadanAI (prix Impact territorial & utilité publique), puis été sélectionnées pour la phase nationale en tant que finalistes — un parcours intense autour de l'IA au service des territoires.",
+        galleries: [
           {
-            alt: 'RamadanAI — moment d’équipe ou de travail',
-            placeholderLabel: 'RamadanAI',
+            label: 'Phase régionale',
+            images: [
+              {
+                src: '/photos/ramadanai/regional/prix-trophee.png',
+                alt: 'Remise du prix au Ramadan IA Hackathon régional — trophée et certificat',
+              },
+              {
+                src: '/photos/ramadanai/regional/equipe-prix.png',
+                alt: 'Équipe lauréate du Ramadan IA Hackathon régional avec certificats et trophée',
+              },
+            ],
           },
           {
-            alt: 'RamadanAI — présentation ou phase nationale',
-            placeholderLabel: 'Phase nationale',
+            label: 'Phase nationale',
+            images: [
+              {
+                src: '/photos/ramadanai/national/participant.png',
+                alt: 'Participante au Ramadan IA Hackathon National — badge officiel',
+              },
+              {
+                src: '/photos/ramadanai/national/equipe.png',
+                alt: 'Équipe au Ramadan IA Hackathon National devant le backdrop officiel',
+              },
+              {
+                src: '/photos/ramadanai/national/portrait.png',
+                alt: 'Portrait au Ramadan IA Hackathon National — Ministère de la Transition Numérique',
+              },
+            ],
           },
         ],
       },
       {
-        title: 'Bootcamp Euromed',
-        badge: 'Formation intensive',
+        title: 'Hack’Days Ideation — Euromed Innovation Center',
+        badge: '2026 · UEMF · Euromed Innovation Center',
         description:
-          "Participation à un bootcamp à l’Université Euroméditerranée : sessions condensées sur les pratiques tech, le travail en groupe et les livrables sous contrainte de temps — une excellente préparation aux environnements exigeants.",
+          "Participation au programme Hack’Days Ideation 2026 à l’Euromed Innovation Center (Université Euroméditerranée de Fès), en collaboration avec Tamwilcom, InnovInvest et Bank of Africa — travail en équipe, idéation et livrables sous contrainte de temps dans un cadre professionnel.",
         images: [
           {
-            alt: 'Bootcamp Euromed — atelier ou session',
-            placeholderLabel: 'Euromed',
+            src: '/photos/euromed/travail-bureau.png',
+            alt: 'Travail sur ordinateur au sein de l’Euromed Innovation Center',
           },
           {
-            alt: 'Bootcamp Euromed — groupe / projet',
-            placeholderLabel: 'Bootcamp',
+            src: '/photos/euromed/equipe.png',
+            alt: 'Équipe du Hack’Days Ideation — Euromed Innovation Center',
+          },
+          {
+            src: '/photos/euromed/certificat-hackdays.png',
+            alt: 'Certificat de participation — Hack’Days Ideation Program 2026, Euromed Innovation Center',
+            wide: true,
           },
         ],
       },
       {
         title: 'Water4Future — Hackathon international',
-        badge: '2024 · Finalistes',
+        badge: '2026 · Montpellier · UNESCO ICIREWARD',
         description:
-          "Participation au hackathon international Water4Future autour des enjeux de l’eau et de la durabilité. Notre équipe est arrivée en finale, avec un prototype et une vision alignés sur l’impact environnemental.",
+          'Hackathon international sur l’eau et la durabilité : équipe finaliste en 2024. Participation à la compétition internationale étudiants à Montpellier en 2026 avec attestation du Centre UNESCO ICIREWARD.',
         images: [
           {
-            alt: 'Water4Future — équipe ou hackathon',
-            placeholderLabel: 'Water4Future',
-          },
-          {
-            alt: 'Water4Future — pitch ou démo',
-            placeholderLabel: 'Finale',
+            src: '/photos/water4future/attestation-participation.png',
+            alt: 'Attestation de participation — Hackathon Water4Future international competition students, UNESCO ICIREWARD, Montpellier',
+            wide: true,
           },
         ],
       },
@@ -93,15 +126,16 @@ export const portfolio = {
     professional: [
       {
         kind: 'internship' as const,
-        title: 'Stage — développement web',
-        organization: 'EHC · Casablanca',
-        period: 'Été 2023',
+        title: 'Stage — EHC',
+        organization: 'EHC (Experts Human Capital) · Casablanca',
+        period: 'Juil. — août 2025',
         description:
-          "Stage en développement web : contribution à une plateforme de gestion avec React.js, Express.js et MySQL — mise en pratique du full-stack en contexte professionnel.",
+          "Stage chez EHC (Experts Human Capital) : découverte de l’entreprise et missions de développement (attestation de septembre 2025).",
         images: [
           {
-            alt: 'Stage EHC — bureau ou capture d’écran',
-            placeholderLabel: 'Stage EHC',
+            src: '/photos/ehc/attestation-stage.png',
+            alt: 'Attestation de stage — EHC Experts Human Capital, Bouchra Oulmouk',
+            wide: true,
           },
         ],
       },
@@ -114,12 +148,8 @@ export const portfolio = {
           "Pilotage d’équipe, organisation d’événements tech et gestion de partenariats au sein du club universitaire — coordination, communication et mise en avant de la communauté étudiante.",
         images: [
           {
-            alt: 'ZOOM Club — événement ou réunion',
-            placeholderLabel: 'ZOOM Club',
-          },
-          {
-            alt: 'ZOOM Club — vie associative',
-            placeholderLabel: 'Événement',
+            src: '/photos/zoom/club-banner.png',
+            alt: 'Représentation du ZOOM University Club — événement à la faculté',
           },
         ],
       },
@@ -154,5 +184,5 @@ export const portfolio = {
         'Task-tracking app built with React.js, Express.js, and MongoDB.',
       technologies: ['React.js', 'Express.js', 'MongoDB'],
     },
-  ],
+  ] satisfies PortfolioProject[],
 }

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, FolderGit2 } from 'lucide-react'
-import { portfolio } from '../data/portfolio'
+import { portfolio, type PortfolioProject } from '../data/portfolio'
 
 export function Projects() {
   return (
@@ -29,7 +29,7 @@ export function Projects() {
         </motion.div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {portfolio.projects.map((project, index) => (
+          {portfolio.projects.map((project: PortfolioProject, index) => (
             <motion.article
               key={project.name}
               initial={{ opacity: 0, y: 28 }}
@@ -63,19 +63,27 @@ export function Projects() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-5">
+              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-100 pt-5">
+                {project.githubUrl ? (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 transition hover:text-indigo-800"
+                  >
+                    Repository
+                    <ExternalLink className="size-3.5 opacity-70" aria-hidden />
+                  </a>
+                ) : null}
                 <a
                   href={portfolio.contact.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 transition hover:text-indigo-800"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 transition hover:text-indigo-600"
                 >
-                  GitHub profile
+                  Profil GitHub
                   <ExternalLink className="size-3.5 opacity-70" aria-hidden />
                 </a>
-                <span className="text-sm text-slate-400">
-                  Repositories available on request
-                </span>
               </div>
             </motion.article>
           ))}
