@@ -8,6 +8,8 @@ export type PortfolioProject = {
 }
 
 export const portfolio = {
+  profile_image: '/photos/ramadanai/national/participant.png',
+  profile_name: 'Bouchra Oulmouk',
   hero_headline:
     'Software Engineering & AI Student — Seeking 4-month PFA internship in AI & Web Development',
   about_me:
@@ -72,10 +74,6 @@ export const portfolio = {
           {
             label: 'Phase nationale',
             images: [
-              {
-                src: '/photos/ramadanai/national/participant.png',
-                alt: 'Participante au Ramadan IA Hackathon National — badge officiel',
-              },
               {
                 src: '/photos/ramadanai/national/equipe.png',
                 alt: 'Équipe au Ramadan IA Hackathon National devant le backdrop officiel',
