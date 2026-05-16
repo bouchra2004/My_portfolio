@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowDownRight, Sparkles, Mail, Phone, MapPin } from 'lucide-react'
+import { ArrowDownRight, Sparkles, Mail, MapPin } from 'lucide-react'
 import { portfolio } from '../data/portfolio'
 import { publicAssetUrl } from '../lib/publicUrl'
 
